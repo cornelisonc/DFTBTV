@@ -72,7 +72,11 @@
                     {{/each}}
                 </ul>
                 <form class="new-friend">
-                    <input type="text" name="name" placeholder="Type to add new friends" />
+                    <input type="text" name="name" placeholder="Type to add new friends">
+                    <input type="tel" name="phone" placeholder="Friend's phone">
+                    <button class="large btn waves-effect waves-light" type="submit" name="action">
+                        Add Friend
+                    </button>
                 </form>
           </div>
         </div>
@@ -168,5 +172,5 @@
 </body>
 
 <template name="friend">
-    <li class="collection-item">{{name}}</li>
+    <li class="collection-item">{{name}} {{#if phone}}({{phone}}){{/if}}</li>
 </template>
