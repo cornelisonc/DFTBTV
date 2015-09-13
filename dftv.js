@@ -22,7 +22,9 @@ if (Meteor.isClient) {
             Friends.insert({
                 name: name,
                 phone: phone,
-                createdAt: new Date() // current time
+                createdAt: new Date(),            // current time
+                owner: Meteor.userId(),           // _id of logged in user
+                username: Meteor.user().username  // username of logged in user
             });
 
             // Clear form
@@ -36,7 +38,9 @@ if (Meteor.isClient) {
 
             Items.insert({
                 name: name,
-                createdAt: new Date() // current time
+                createdAt: new Date(),            // current time
+                owner: Meteor.userId(),           // _id of logged in user
+                username: Meteor.user().username  // username of logged in user
             });
 
             // Clear form
