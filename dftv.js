@@ -42,9 +42,5 @@ if (Meteor.isClient) {
             // Clear form
             event.target.name.value = "";
         }
-
-        // new item code goes here -- be sure to
-        // add a comma after the } on line 28, and
-        // remember that you don't need any 'phone' fields
     });
 }
