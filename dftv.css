@@ -6,3 +6,10 @@ h1 {
 h5 {
 	color: #FFFFFF; text-transform: uppercase; font-size:20px;
 }
+
+.css {
+	background: -webkit-linear-gradient(#FF6600, #99FFCC);
+	background: -o-linear-gradient(#FF6600, #99FFCC);
+	background: -moz-linear-gradient(#FF6600, #99FFCC);
+	background: linear-gradient(#FF6600, #99FFCC);
+}
