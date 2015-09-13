@@ -43,4 +43,8 @@ if (Meteor.isClient) {
             event.target.name.value = "";
         }
     });
+
+    Accounts.ui.config({
+        passwordSignupFields: "USERNAME_ONLY"
+    });
 }
