@@ -1,8 +1,8 @@
 
 h1 {
-	color: #FF6600;
+	color: #FF6600; font-size:125px;
 }
 
 h5 {
-	color: #FFFFFF;
+	color: #FFFFFF; text-transform: uppercase; font-size:20px;
 }
