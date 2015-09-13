@@ -4,96 +4,93 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-
 </head>
 
 <body cz-shortcut-listen="true">
-  <nav class="orange" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">DFTBTV</a>
-    </div>
-  </nav>
-
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center text-lighten-2">Don't Forget To Bring The Vodka!</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">Crowdsource & Automate Your Event Planning & Supplies</h5>
+    <nav class="orange" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">DFTBTV</a>
         </div>
-        <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange lighten-1">Get Started</a>
+    </nav>
+
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center text-lighten-2">Don't Forget To Bring The Vodka!</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">Crowdsource & Automate Your Event Planning & Supplies</h5>
+                </div>
+                <div class="row center">
+                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange lighten-1">Get Started</a>
+                </div>
+                <br><br>
+            </div>
         </div>
-        <br><br>
-      </div>
+        <div class="parallax"><img src="bar.jpg" style="display: block; transform: translate3d(-50%, 160px, 0px);"></div>
     </div>
-    <div class="parallax"><img src="bar.jpg" style="display: block; transform: translate3d(-50%, 160px, 0px);"></div>
-  </div>
 
-  <div class="container">
-    <div class="section">
+    <div class="container">
+        <div class="section">
 
-        <!--   Icon Section   -->
-        <div class="row">
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-                    <h4 class="center">Your Info</h4>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="first_name" type="text" class="validate">
-                            <label for="first_name">First Name</label>
+            <!--   Icon Section   -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                        <h4 class="center">Your Info</h4>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="first_name" type="text" class="validate">
+                                <label for="first_name">First Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="last_name" type="text" class="validate">
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="tel" class="validate">
+                                <label for="icon_telephone">Telephone</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="last_name" type="text" class="validate">
-                            <label for="last_name">Last Name</label>
-                        </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                        <h4 class="center">Your Friends</h4>
+                        <ul class="collection">
+                            {{#each friends}}
+                                {{> friend}}
+                            {{/each}}
+                        </ul>
+                        <form class="new-friend">
+                            <input type="text" name="name" placeholder="Friend's name">
+                            <input type="tel" name="phone" placeholder="Friend's phone">
+                            <button class="large btn waves-effect waves-light" type="submit" name="action">
+                                Add Friend
+                            </button>
+                        </form>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">phone</i>
-                            <input id="icon_telephone" type="tel" class="validate">
-                            <label for="icon_telephone">Telephone</label>
-                        </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                        <h4 class="center">Your List</h4>
+                        <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
                     </div>
                 </div>
             </div>
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h4 class="center">Your Friends</h4>
-                <ul class="collection">
-                    {{#each friends}}
-                        {{> friend}}
-                    {{/each}}
-                </ul>
-                <form class="new-friend">
-                    <input type="text" name="name" placeholder="Type to add new friends">
-                    <input type="tel" name="phone" placeholder="Friend's phone">
-                    <button class="large btn waves-effect waves-light" type="submit" name="action">
-                        Add Friend
-                    </button>
-                </form>
-          </div>
         </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h4 class="center">Your List</h4>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-      </div>
     </div>
-
-  </div>
-
 
     <div class="parallax-container valign-wrapper">
         <div class="section no-pad-bot">
@@ -105,31 +102,30 @@
         <div class="parallax"><img src="background2.png" alt="Unsplashed background img 2" style="display: block;"></div>
     </div>
 
-  <div class="container">
-    <div class="section">
+    <div class="container">
+        <div class="section">
 
-      <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>Contact Us</h4>
+                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+                </div>
+            </div>
+
         </div>
-      </div>
-
     </div>
-  </div>
 
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">Built at Startup Weekend Columbia Missouri, September 2015</h5>
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">Built at Startup Weekend Columbia Missouri, September 2015</h5>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="parallax"><img src="background3.png" alt="Unsplashed background img 3" style="display: block;"></div>
     </div>
-    <div class="parallax"><img src="background3.png" alt="Unsplashed background img 3" style="display: block;"></div>
-  </div>
 
     <footer class="page-footer orange">
         <div class="container">
