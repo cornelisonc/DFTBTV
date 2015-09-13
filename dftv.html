@@ -84,11 +84,20 @@
                     <div class="icon-block">
                         <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
                         <h4 class="center">Your List</h4>
-                        <!-- Add the code to display Items here. It should match Friends above -->
+                        <ul class="collection">
+                            {{#each items}}
+                                {{> item}}
+                            {{/each}}
+                        </ul>
+                        <form class="new-item">
+                            <input type="text" name="name" placeholder="Item name">
+                            <button class="large btn waves-effect waves-light" type="submit" name="action">
+                                Add Item
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -150,6 +159,10 @@
 
 <template name="friend">
     <li class="collection-item">{{name}} {{#if phone}}({{phone}}){{/if}}</li>
+</template>
+
+<template name="item">
+    <li class="collection-item">{{name}}</li>
 </template>
 
 <!-- Add a template to display Items here. You don't need the Phone stuff. -->
