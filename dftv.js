@@ -5,10 +5,16 @@ if (Meteor.isClient) {
     // This code only runs on the client
     Template.body.helpers({
         friends: function () {
-            return Friends.find({}, {sort: {name: 1}});
+            return Friends.find(
+                {owner: Meteor.userId()}, // filtering, owned by current user
+                {sort: {name: 1}} // sorting: Alphabetically by name
+            );
         },
         items: function () {
-            return Items.find({}, {sort: {name: 1}});
+            return Items.find(
+                {},
+                {sort: {name: 1}}
+            );
         }
     });
 
